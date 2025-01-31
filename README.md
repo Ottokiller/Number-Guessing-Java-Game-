@@ -13,9 +13,6 @@ How It Works:
     If they fail, they must keep trying until they get it right.
     Special Easter egg if both numbers are 20.
 
- Tech Used: Java, Scanner (user input), Random (number generation), and a dash of humor.
-
-Why? Because coding should be fun, and games make learning logic enjoyable!
 Run It Yourself:
 
     Clone this repo

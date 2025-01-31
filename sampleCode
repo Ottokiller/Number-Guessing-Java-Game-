@@ -1,0 +1,87 @@
+import java.util.Scanner;
+import java.util.Random;
+
+/**
+ * I named this class MyProgram, according to instructions.
+ * This is where I used the main() method to help input my name.
+ * wordiness and redundancy. If necessary, additional paragraphs should
+ * be preceded by <p>, the html tag for a new paragraph.
+ * <p>Bugs: No bugs
+ *
+ * @author Azubike Ekwueme
+ */
+public class MyProgram {
+
+    /**
+     * Asks user to put in 2 numbers.
+     * Once entered, If said inputs are correct, u win. If not, try again till u get it.
+     *
+     * @param args unused
+     */
+    public static void main(String [] args) {
+
+        Scanner input = new Scanner(System.in);
+        int userNum = 0;
+
+        System.out.println("Oh, why hello there. Wanna pass the door? Firstly, enter a number: ");
+
+        if (input.hasNextInt()){
+            userNum = input.nextInt();
+        } else {
+            System.out.println("NOT A NUMBER");
+            return;
+        }
+
+        System.out.println("Good, Good, Good. This will do nicely. On to the next test. " +
+                           "Please enter another right here:");
+
+        double userNum2 = 0;
+
+        if (input.hasNextDouble()){
+            userNum2 = input.nextDouble();
+        } else {
+            System.out.println("NOT A NUMBER");
+            return;
+        }
+
+        Random randGen = new Random();
+
+        System.out.println("Excellent. Halfway there. Now let's see if the trial has been passed.");
+
+        int imaginaryNum1 =  randGen.nextInt(21);
+        int imaginaryNum2 = randGen.nextInt(31);
+        boolean correctGuess = false;
+
+        while (!correctGuess) {
+            if (userNum2 > imaginaryNum1 || userNum > imaginaryNum2) {
+                System.out.println("You have passed the trial. Please pass at your leisure.");
+                correctGuess = true;
+            } else if (userNum2 == 20 && userNum == 20) {
+                System.out.println("Here's a sandwich bonus.");
+                continue;
+            } else {
+                System.out.println("That is incorrect. Please try again.");
+                System.out.println("Hello there. Wanna pass the door? Enter a number: ");
+
+                if (input.hasNextInt()) {
+                    userNum = input.nextInt();
+                } else {
+                    System.out.println("NOT A NUMBER");
+                    return;
+                }
+
+                System.out.println("Good, Good, Good. This will do nicely. On to the next test. " +
+                                   "Please enter another right here:");
+
+                if (input.hasNextDouble()) {
+                    userNum2 = input.nextDouble();
+                } else {
+                    System.out.println("NOT A NUMBER");
+                    return;
+                }
+            }
+        }
+
+        input.close();
+    }
+}
